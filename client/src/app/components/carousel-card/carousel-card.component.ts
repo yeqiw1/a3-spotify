@@ -8,7 +8,7 @@ import { ResourceData } from '../../data/resource-data';
     standalone: false
 })
 export class CarouselCardComponent implements OnInit {
-  @Input() resource:ResourceData;
+  @Input() resource!:ResourceData;
 
   constructor() { }
 
@@ -16,3 +16,4 @@ export class CarouselCardComponent implements OnInit {
   }
 
 }
+
