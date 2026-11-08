@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistData } from '../../data/artist-data';
@@ -19,12 +18,14 @@ export class TrackPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    // Get the track ID from the URL
   	this.trackId = this.route.snapshot.paramMap.get('id') || "";
-  	//TODO: Inject the spotifyService and use it to get the track data
 
+    // Fetch the track information from the server
     this.spotifyService.getTrack(this.trackId).then((data) => {
       this.track = data;
     });
   }
 
 }
+

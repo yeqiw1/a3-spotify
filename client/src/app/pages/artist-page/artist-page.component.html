@@ -1,31 +1,27 @@
 @if(artist) {
 	<div class="row">
 		<div class="col-xl-4 col-12">
-			<!--TODO: populate with artist name-->
+			<!-- Show artist details -->
 			<h1>{{artist.name}}</h1>
-			<!--TODO: populate with artist image URL-->
 			<img id="artistImg" [src]="artist.imageURL">
 			<p>
-				<!--TODO: link to artist page on spotify, display artist name-->
 				<a class="btn btn-light" role="button" [href]="artist.url" target="_blank">Open {{artist.name}} on Spotify</a>
 			</p>
 		</div>
 		<div class="col-xl-4 col-12">
 			<h3>Popularity</h3>
-			<!--TODO: display the number of followers, formatted with commas for thousands/millions-->
+			<!-- Show followers and popularity -->
 			<p>{{artist.followersStr}} followers</p>
 			<app-thermometer [popularity]="artist.popularity"></app-thermometer>
-			<!--TODO: display artist name-->
+
 			<h3>{{artist.name}}'s Albums</h3>
-			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
+			<!-- Show the artist's albums in a carousel -->
 			<app-carousel [resources]="albums" carouselId="artistAlbums"></app-carousel>
 		</div>
 		<div class="col-xl-4 col-12">
-			<!--TODO: display artist name-->
 			<h3>{{artist.name}}'s Top Tracks</h3>
-			<!--TODO: display the artist's top tracks-->
+			<!-- Show top tracks without repeating the artist -->
 			<app-track-list [tracks]="topTracks" [hideArtist]="true"></app-track-list>
 		</div>
 	</div>
 }
-

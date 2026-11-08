@@ -1,34 +1,33 @@
 <div class="row">
 	@if(track) {
 		<div class="col-sm-6 col-12">
-			<!--TODO: populate with track name-->
+			<!-- Display the track name -->
 			<h1>{{track.name}}</h1>
 			<p>
-				<!--TODO: link to album page, display album name-->
+				<!-- Link to the album page -->
 				Track on <a [routerLink]="['/album', track.album.id]">{{track.album.name}}</a>
 			</p>
 			<div>
-				<!--TODO: loop over track's artists-->
+				<!-- Display all artists for this track -->
 				@for(artist of track.artists; track artist.id) {
 					<p>
-						<!--TODO: link to artist page, display artist name-->
+						<!-- Link to the artist page -->
 						Artist: <a [routerLink]="['/artist', artist.id]">{{artist.name}}</a>
 					</p>
 				}
 			</div>
 			<p>
-				<!--TODO: populate with track duration-->
+				<!-- Show the track duration -->
 				Duration: {{track.durationStr}}
 			</p>
 			<p>
-				<!--TODO: link to track page on spotify, display track name-->
+				<!-- Link to the track on Spotify -->
 				<a class="btn btn-light" role="button" [href]="track.url" target="_blank">Open {{track.name}} on Spotify</a>
 			</p>
 		</div>
 		<div class="col-sm-6 col-12">
-			<!--TODO: create a thermometer component with the track's popularity-->
+			<!-- Show the track's popularity -->
 			<app-thermometer [popularity]="track.popularity"></app-thermometer>
 		</div>
 	}
 </div>
-
